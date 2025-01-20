@@ -21,7 +21,12 @@ app.use(express.json());
 app.use(cors({ origin: "*" }));
 
 app.get("/", (req, res) => {
-  res.json({ data: "Hello" });
+  const serverStatus = {
+    message: "Server is running",
+    uptime: process.uptime(),
+    time: new Date().toLocaleString(),
+  };
+  res.json(serverStatus);
 });
 
 // *SignUp
