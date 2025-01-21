@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
   const serverStatus = {
     message: "Server is running",
     uptime: process.uptime(),
-    time: new Date().toLocaleString(),
+    time: new Date().toLocaleTimeString("en-Us", { hour12: false }),
   };
   res.json(serverStatus);
 });
